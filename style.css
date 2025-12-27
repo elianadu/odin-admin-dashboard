@@ -1,0 +1,258 @@
+:root {
+  --dark-color: #355028;
+  --medium-color: #d6e0d6;
+  --light-color: #fffef6;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "EB Garamond";
+  font-size: 20px;
+  height: 100%;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 4fr;
+}
+
+.header {
+  grid-column: 2;
+  background-color: var(--light-color);
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-template-rows: 2fr 3fr;
+  padding: 20px 30px 20px 30px;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 2px 2px 3px var(--dark-color);
+  z-index: 1;
+  form {
+    display: grid;
+    grid-template-columns: 1.5em 10px 1fr;
+    grid-template-rows: 1.2em;
+    svg {
+      fill: var(--dark-color);
+      height: 1.2em;
+      width: 1.2em;
+    }
+    input {
+      padding: 2px;
+      width: 100%;
+      border-radius: 20px;
+      border-width: 0;
+      background-color: var(--medium-color);
+    }
+  }
+  .user-info {
+    grid-column: 2;
+    justify-self: end;
+    font-family: "Libre Bodoni";
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    gap: 30px;
+    svg {
+      height: 1em;
+      width: 1em;
+    }
+    img {
+      border-radius: 50%;
+      border: 2px solid var(--dark-color);
+      height: 2em;
+      width: 2em;
+    }
+  }
+  .user-greeting {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 3em 1fr;
+    align-items: center;
+    gap: 20px;
+    img {
+      border-radius: 50%;
+      border: 2px solid var(--dark-color);
+      height: 3em;
+      width: 3em;
+    }
+    .username {
+      font-family: "Libre Bodoni";
+      font-size: 24px;
+      margin: 5px 0;
+    }
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    li {
+      color: white;
+      list-style: none;
+      background-color: var(--dark-color);
+      margin: 0 15px;
+      text-align: center;
+      align-content: center;
+      border-radius: 20px;
+      height: 2em;
+    }
+    li:hover {
+      background-color: var(--medium-color);
+    }
+  }
+}
+
+.sidebar {
+  grid-row: 1 / -1;
+  background-color: var(--dark-color);
+  display: grid;
+  grid-template-rows: 100px 2fr 1fr 2fr;
+  color: white;
+  padding: 10px 40px;
+  .logo {
+    display: grid;
+    grid-template-columns: 1em 1fr;
+    justify-items: space-between;
+    align-items: center;
+    gap: 30px;
+    font-family: "Libre Bodoni";
+    font-size: 24px;
+    svg {
+      fill: white;
+      height: 1.5em;
+      width: 1.5em;
+    }
+  }
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    padding: 10px 0;
+    color: white;
+    display: grid;
+    grid-template-columns: 1em 1fr;
+    place-items: space-between;
+    gap: 30px;
+    svg {
+      fill: white;
+      height: 1em;
+      width: 1em;
+    }
+  }
+  li:hover {
+    text-decoration: underline;
+  }
+}
+
+.main-content {
+  overflow: auto;
+  background-color: var(--medium-color);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 20px;
+  .content-header {
+    margin: 10px 0 5px 20px;
+    font-family: "Libre Bodoni";
+  }
+  .projects-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-auto-rows: 250px;
+    height: 100%;
+    .project-card {
+      border-radius: 10px;
+      box-shadow: 2px 2px 3px var(--dark-color);
+      background: var(--light-color);
+      padding: 10px 20px 20px 20px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 10px 20px 20px 20px;
+      border-left: 8px solid var(--dark-color);
+      h2 {
+        font-size: 18px;
+        margin: 20px;
+        padding: 0;
+      }
+      .icons {
+        align-self: flex-end;
+        justify-self: flex-end;
+        svg {
+          fill: var(--dark-color);
+          height: 1em;
+          width: 1em;
+        }
+        svg:hover {
+          fill: var(--medium-color);
+        }
+      }
+      p {
+        flex: 1;
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+  }
+  .misc-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    .content-header {
+      font-family: "Libre Bodoni";
+    }
+  }
+
+
+  .announcements-card,
+  .trending-card {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px var(--dark-color);
+    background: var(--light-color);
+    margin: 20px;
+    height: auto;
+    font-size: 16px;
+  }
+
+  .announcements-card {
+    padding: 10px 40px 30px 40px;
+    h2 {
+        font-size: 18px;
+    }
+    hr {
+        color: var(--medium-color);
+        margin: 20px 0px 0px 0px;
+    }
+  }
+  .trending-card {
+    padding: 20px 20px 20px 20px;
+    display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 20px;
+      font-weight: bold;
+    .person {
+      display: grid;
+      grid-template-columns: 3em 1fr;
+      align-items: center;
+      gap: 20px;
+      img {
+      border-radius: 50%;
+      border: 2px solid var(--dark-color);
+      height: 3em;
+      width: 3em;
+    }
+    }
+    .description{
+        font-weight: lighter;
+    }
+  }
+}
