@@ -37,6 +37,8 @@ body {
     display: grid;
     grid-template-columns: 1.5em 10px auto;
     grid-template-rows: 1.2em;
+    width: 100%;
+    align-items: center;
     svg {
       fill: var(--dark-color);
       height: 1.2em;
@@ -46,6 +48,7 @@ body {
       border-radius: 20px;
       border-width: 0;
       background-color: var(--medium-color);
+      width: 100%;
     }
   }
   .user-info {
